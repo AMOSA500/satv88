@@ -13,7 +13,7 @@ class AddReferenceToInvoice extends Migration
      */
     public function up()
     {
-        Schema::table('Invoices', function (Blueprint $table) {
+        Schema::table('invoices', function (Blueprint $table) {
             $table->string('payment_ref')->after('user_id')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class AddReferenceToInvoice extends Migration
      */
     public function down()
     {
-        Schema::table('Invoices', function (Blueprint $table) {
+        Schema::table('invoices', function (Blueprint $table) {
             $table->dropColumn('payment_ref');
         });
     }
